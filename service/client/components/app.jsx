@@ -1,26 +1,29 @@
-import React from 'react';
+import React, {useState ,useEffect} from 'react'
 import axios from 'axios'
 
-import Question from './Question.jsx'
+import SearchBar from './SearchBar.jsx';
+import MoreAnswerdQuestions from './MoreAnswerdQuestions.jsx';
+import AddQuestions from './AddQuestions.jsx'
 
 
-class App extends React.Component{
-    constructor(props){
-        super(props)
-    }
-
-    componentDidMount() {
-      axios.get('/')  
-    }
-
-    render(){
-        return(
+const App = () => {
+   return(
             <div>
-                <h1>Test Hello</h1>
-                <Question />
+           <SearchBar />
+           <div>
+                <MoreAnswerdQuestions />  <AddQuestions />
+               
+
+           </div>
             </div>
         )
-    }
-}
+} 
+
+    
+
+    
+     
+    
+
 
 export default App;

@@ -1,0 +1,46 @@
+#app{
+    width: 940px;
+    margin: auto;
+}
+
+
+.search-input {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  padding: 15px 45px 15px 15px;
+  border-color:black;
+  transition: all .4s;
+}
+
+
+.search-btn {
+  background-color: transparent;
+  font-size: 18px;
+  padding: 6px 9px;
+  margin-left:-45px;
+  border:none;
+  transition: all .4s;
+  z-index: 10;
+}
+
+
+.MoreAnswerdQuestions{
+  padding: 16px 19px;
+  background-color: transparent;
+}
+
+.AddQuestions{
+    padding: 16px 19px;
+  background-color: transparent;
+  
+      
+}
+#adding{
+    margin-left: 15px;
+}
+.btn-add{
+    margin-left: 400px;
+    margin-left: 280px;
+    margin-top: -52px;
+}
