@@ -23,7 +23,7 @@ class Buttons extends React.Component {
             </div>
         return (
             <div>
-                <h5>LOAD MORE ANSWERS</h5>
+                <h5 style={{marginTop:"25px"}}>LOAD MORE ANSWERS</h5>
                 <button type="button-add" className="MoreAnswerdQuestions">MORE ANSWERED QUESTIONS</button>
                 <div className="btn-add" onClick={this.addQ}>
                     <button className="AddQuestions">

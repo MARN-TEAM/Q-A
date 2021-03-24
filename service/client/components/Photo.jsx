@@ -4,14 +4,29 @@ import { Image } from 'semantic-ui-react'
 export class Photo extends Component {
     render() {
         return (
-            <div>
+            <div className='container'>
+                <p>Yes, as you can see in these photos.</p>
                  <div className='row'>
-                    <div className='col-8'>
-                        <p>Yes, as you can see in these photos.</p>
+                    <div className='col-2'>
                         <Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' />
-                        <p className="user"> by User1337,May 1,2019   |   Helpful? Yes (0)  |  Report  </p>
+                    </div>
+                    <div className='col-2'>
+                        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' />                       
+                    </div>
+                    <div className='col-2'>
+                        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' />                      
                     </div>
                 </div>
+                 <div className='col' className='one-Question-Helpful'>
+                                by User1337 -Seller, May 1,2019  <div className="Vertical-Line"></div>  Helpful?
+                                    <button type="button" className="btn btn-link Yes-button-one-Question">
+                                    Yes
+                                        <p className='Count-Helpful-Yes'>(9)</p>
+                                    </button>
+                                    <div className="Vertical-Line">
+                                    </div>
+                                    <button type="button" className="btn btn-link report-button-one-Question">Report</button>
+                        </div>
             </div>
         )
     }

@@ -4,10 +4,7 @@
     font-family: “adobe-clean”, sans-serif;
     color:#5C5C5C,
 }
-.date-question{
-  padding-left: 10%;
-  
-}
+
 
 .search-input {
   width: 100%;
@@ -37,10 +34,8 @@
 }
 
 .AddQuestions{
-    padding: 16px 19px;
-  background-color: transparent;
-  
-      
+  padding: 16px 19px;
+  background-color: transparent;     
 }
 #adding{
     margin-left: 15px;
@@ -48,8 +43,7 @@
 .btn-add{
     margin-left: 400px;
     margin-left: 280px;
-    margin-top: -52px;
-    
+    margin-top: -52px;  
 }
 .ansewer{
   font-size: 14px;
@@ -68,4 +62,50 @@
   margin-left: 22px;
   margin-top: 20px;
   color: #5C5C5C;
+  
 }
+/* ---------------------------------------------------------------- */
+
+
+.one-Question-Helpful{
+    margin-top: 14px;
+    font-size: 13px;
+    text-align: justify;
+    line-height: 20px;
+    margin-left: 24px;
+}
+
+.one-Question-Helpful-answer{
+      margin-top: -8px;
+    font-size: 13px;
+    text-align: justify;
+    line-height: 20px;
+    margin-left: 24px;
+}
+
+.report-button-one-Question{
+    font-size: 13px;
+    color :#5C5C5C;
+    text-decoration: underline;
+    margin-top: -5px;
+    
+}
+.Yes-button-one-Question{
+    font-size: 13px;
+    color :#5C5C5C;
+    margin-left: -8px;
+    text-decoration: underline;
+    margin-bottom: 5px;
+    
+}
+.Vertical-Line{
+    border-left: 1.4px solid #5C5C5C;
+    height: 17px;
+    margin-bottom: -3px;
+    display: inline-block;
+}
+
+.Count-Helpful-Yes{
+    font-size: 10px;
+    display: inline-block;
+} 
