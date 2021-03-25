@@ -15,7 +15,7 @@ class SearchBar extends React.Component {
 
     handleChange(e) {
         this.setState({
-            [e.target.name]: e.target.value
+            searchInput: e.target.value
         })
     }
 

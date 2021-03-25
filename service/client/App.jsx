@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios'
 
 import SearchBar from './components/SearchBar.jsx';
-import Buttons from './components/Buttons.jsx'
+
 import QuA from './components/QuA.jsx';
-import Photo from './components/Photo.jsx';
+
 import {token} from '../config.js'
 
 class App extends React.Component {
@@ -40,8 +40,8 @@ class App extends React.Component {
                <div>
                     <SearchBar data={this.state.data}/>
                     <QuA data={this.state.data}/>
-                    <Photo data={this.state.data}/>                        
-                    <Buttons data={this.state.data}/>
+                                           
+                    
                </div>
           )
      }
