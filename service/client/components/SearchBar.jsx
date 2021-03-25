@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
             <div className="mainstyle" >
             <p>QUESTIONS & ANSWERS</p>
             <div className="search-box">
-                <input className="search-input" type="text" name="searchInput" placeholder="QUESTION LIST QUESTION & ANSWERS HAVE A QUESTION? SEARCH FOR ANSWERS..." onChange={this.handleChange} />
+                <input className="search-input" type="search" name="searchInput" placeholder="QUESTION LIST QUESTION & ANSWERS HAVE A QUESTION? SEARCH FOR ANSWERS..." onChange={this.handleChange} />
                     <button className="search-btn" onClick={() => { this.handleSearch()}}>
                     <i className="fas fa-search"></i>
                 </button>
