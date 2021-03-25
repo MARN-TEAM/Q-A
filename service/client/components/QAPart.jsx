@@ -4,8 +4,16 @@ import moment from 'moment';
 
 class QAPart extends React.Component {
     constructor(props) {
-            super(props);
+        super(props);
+        this.state = {
+            yes: this.props.data.question_helpfulness,
+            addq:'hidden'
         }
+        this.addQustion=this.addQustion.bind(this)
+    }
+    addQustion() {
+        this.setState({ addq:'shown'})
+    }
     render() {
     const {data} = this.props
     return (
@@ -17,13 +25,13 @@ class QAPart extends React.Component {
                        <div className='date-question col-4'>
                          <div className='one-Question-Helpful-answer'>
                                    Helpful?
-                                    <button type="button" className="btn btn-link Yes-button-one-Question">
-                                    Yes
-                                        <p className='Count-Helpful-Yes'>({data.question_helpfulness})</p>
+                                    <button type="button" className="btn btn-link Yes-button-one-Question" onClick={()=>{this.setState({yes: this.state.yes+1})}}>
+                                    Yes 
+                                        <p className='Count-Helpful-Yes'>({data.question_helpfulness ,this.state.yes})</p>
                                     </button>
                                     <div className="Vertical-Line">
                                     </div>
-                                    <button type="button" className="btn btn-link report-button-one-Question">Add Answer</button>
+                                    <button type="button" className="btn btn-link report-button-one-Question" >Add Answer</button>
                         </div>
                     </div>
                     
