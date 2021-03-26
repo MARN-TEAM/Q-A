@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import { Image } from 'semantic-ui-react'
 
 export class Photo extends Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
         return (
             <div className='container'>
                 <p>Yes, as you can see in these photos.</p>
+                {/* {this.props.data.results[Object.keys(data.answers)[0]].photos} */}
                  <div className='row'>
                     <div className='col-2'>
                         <Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' />

@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios'
 
 import SearchBar from './components/SearchBar.jsx';
-
 import QuA from './components/QuA.jsx';
 
 import {token} from '../config.js'
