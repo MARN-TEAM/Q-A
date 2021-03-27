@@ -38,9 +38,7 @@ class App extends React.Component {
           return (
                <div>
                     <SearchBar data={this.state.data}/>
-                    <QuA data={this.state.data}/>
-                                           
-                    
+                    <QuA data={this.state.data}/>   
                </div>
           )
      }
