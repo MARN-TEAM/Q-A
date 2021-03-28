@@ -11,13 +11,11 @@ export class QuA extends Component {
         super(props)
         this.state = {
             quantityQa: 2,
-            addqu: 'hidden',
             body: '',
             name: "",
             email: "",
             data: this.props.data
         }
-        this.addQ = this.addQ.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -32,8 +30,8 @@ export class QuA extends Component {
                 Authorization: token
             }
         })
-            .then((res) => {
-                console.log("res",res);
+            .then(() => {
+                console.log("posted successfully");
             })
     }
 
@@ -42,11 +40,9 @@ export class QuA extends Component {
             [e.target.name]: e.target.value
         })
     }
-    addQ() {
-        this.setState({ addqu: 'shown' })
-    }
-   
-  
+
+
+
     render() {
         console.log("props", this.props.data.results);
         return (
@@ -54,42 +50,37 @@ export class QuA extends Component {
                 {this.props.data.results && this.props.data.results.map((element, index) => {
                     return (
                         ((index < this.state.quantityQa) ? <QAPart key={index} data={element} /> : '')
-                        // ((element.answers[Object.keys(element.answers)[0]].photos.length > 0) ?<Photo data={element.answers[Object.keys(element.answers)[0]].photos} /> : '')           
-                    )
-                }
-                )}
-                {/* <Photo data={this.state.data} /> */}
+                        // ((element.answers[Object.keys(element.answers)[0]].photos.length > 0) ? <Photo data={element.answers[Object.keys(element.answers)[0]].photos} /> : '')           
+                        )
+                    }
+                    )}
                 <div>
                     {(this.props.data.results && this.state.quantityQa >= this.props.data.results.length ? '' : <div><h5 style={{ marginTop: "25px" }}>LOAD MORE ANSWERS</h5> <button type="button-add" className="MoreAnswerdQuestions" onClick={() => this.setState({ quantityQa: this.state.quantityQa + 2 })}>MORE ANSWERED QUESTIONS</button>  </div>)}
-                    {/* ////////////////////////Add Question ////////// */}
+
                     <div className="container">
                         <div className="btn-add">
-                            <button type="button" className="AddQuestions" onClick={this.addQ} data-toggle="modal" data-target="#myModal">
-                                ADD A QUESTION<i id="adding" className="plus icon"></i></button>
-                            
-                            <div className="modal fade" id="myModal" role="dialog">
-                            <div className="modal-dialog">
-                                <div className="modal-content">
-                                    <div className="modal-body">
-                                        <Form>
-                                            <div>
-                                                <label forhtml="w3review">Ask Your Question:</label>
+                            <button className="AddQuestions" data-toggle="modal" data-target="#myModal">ADD A QUESTION<i id="adding" className="plus icon"></i></button>
+                            <div className="modal fade" id="myModalquestion" role="dialog">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="Question">
+                                            <Form>
+                                                <label forhtml="Questio">Ask your question</label>
                                                 <br />
                                                 <TextArea type="text" name="body" rows={2} onChange={this.handleChange} />
                                                 <br />
-                                                <label forhtml="w3review">For privacy reasons, do not use your full name or email address:</label>
+                                                <label forhtml="Questio">For privacy reasons, do not use your full name or email address:</label>
                                                 <br />
                                                 <input type="text" name="name" placeholder="Example: jackson11!" onChange={this.handleChange}></input>
                                                 <br />
-                                                <label forhtml="w3review">For authentication reasons, you will not be emailed:</label>
+                                                <label forhtml="Questio">For authentication reasons, you will not be emailed:</label>
                                                 <br />
                                                 <input type="email" name="email" placeholder="Why did you like the product or not?" onChange={this.handleChange}></input>
                                                 <br />
-                                                <label forhtml="w3review">You must enter the following:</label>
+                                                <label forhtml="Questio">You must enter the following:</label>
                                                 <br />
-                                                    <Button onClick={() => { this.handleSubmit() }}>Submit question</Button>
-                                            </div>
-                                        </Form>
+                                                <Button onClick={() => { this.handleSubmit() }}>Submit question</Button>
+                                            </Form>
                                         </div>
                                     </div>
                                     <div className="modal-footer">
@@ -99,34 +90,6 @@ export class QuA extends Component {
                             </div>
                         </div>
                     </div>
-                    {/* //////////// */}
-                    {/* <div className="btn-add">
-                        <button className="AddQuestions" onClick={this.addQ} >
-                            ADD A QUESTION
-                        <i id="adding" className="plus icon"></i>
-                        </button>
-                        {this.state.addqu === 'shown' &&
-                            <Form>
-                                <div>
-                                    <label forhtml="w3review">Ask Your Question:</label>
-                                    <br />
-                                    <TextArea type="text" name="body" rows={2} onChange={this.handleChange} />
-                                    <br />
-                                    <label forhtml="w3review">For privacy reasons, do not use your full name or email address:</label>
-                                    <br />
-                                    <input type="text" name="name" placeholder="Example: jackson11!" onChange={this.handleChange}></input>
-                                    <br />
-                                    <label forhtml="w3review">For authentication reasons, you will not be emailed:</label>
-                                    <br />
-                                    <input type="email" name="email" placeholder="Why did you like the product or not?" onChange={this.handleChange}></input>
-                                    <br />
-                                    <label forhtml="w3review">You must enter the following:</label>
-                                    <br />
-                                    <Button onClick={() => { this.handleSubmit() }}>Submit question</Button>
-                                </div>
-                            </Form>
-                        }
-                    </div> */}
                 </div>
             </div>
         )

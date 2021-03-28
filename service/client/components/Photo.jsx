@@ -14,17 +14,17 @@ export class Photo extends Component {
             <div className='container'>
                 <p>Yes, as you can see in these photos.</p>
                 {/* {this.props.data.results[Object.keys(data.answers)[0]].photos} */}
-                 <div className='row'>
+                {data.map(e => <div className='row'>
+                    <div className='col-2-md'>
+                        <Image src={e.photos} size='small' />
+                    </div>
                     <div className='col-2-md'>
                         <Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' />
                     </div>
                     <div className='col-2-md'>
-                        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' />                       
+                        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' />
                     </div>
-                    <div className='col-2-md'>
-                        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' size='small' />                      
-                    </div>
-                </div>
+                </div>)}
                  <div className='col-md' className='one-Question-Helpful'>
                                 by User1337 -Seller, May 1,2019  <div className="Vertical-Line"></div>  Helpful?
                                     <button type="button" className="btn btn-link Yes-button-one-Question" onClick={() => {this.setState({yes: this.state.yes+1})}}>
@@ -41,3 +41,4 @@ export class Photo extends Component {
 }
 
 export default Photo
+ 

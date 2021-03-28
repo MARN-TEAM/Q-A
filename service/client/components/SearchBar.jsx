@@ -5,33 +5,10 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchInput: '',
-            data: []
-
+            
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSearch = this.handleSearch.bind(this);
-    }
 
-    handleChange(e) {
-        this.setState({
-            searchInput: e.target.value
-        })
     }
-
-    handleSearch() {
-        const newData = this.state.data.filter((finded) => finded.question_body === this.state.searchInput)
-        this.setState({
-            data: newData
-      })
-    }
-//        finding(str) {
-//       const newData = this.state.data.filter((finded) => finded.name.search(str) >= 0)
-//       this.setState({
-//         data: newData
-//       })
-//   }
-// <button onChange={(e) => {this.props.finding(this.state.name,e)}}>Search</button>
 
 
     render() {
@@ -39,8 +16,8 @@ class SearchBar extends React.Component {
             <div className="mainstyle" >
             <p>QUESTIONS & ANSWERS</p>
             <div className="search-box">
-                <input className="search-input" type="search" name="searchInput" placeholder="QUESTION LIST QUESTION & ANSWERS HAVE A QUESTION? SEARCH FOR ANSWERS..." onChange={this.handleChange} />
-                    <button className="search-btn" onClick={() => { this.handleSearch()}}>
+                    <input className="search-input" type="search" name="searchInput" placeholder="QUESTION LIST QUESTION & ANSWERS HAVE A QUESTION? SEARCH FOR ANSWERS..." onChange={(e) => this.props.SearchQa(e.target.value)} />
+                    <button className="search-btn" >
                     <i className="fas fa-search"></i>
                 </button>
             </div>
