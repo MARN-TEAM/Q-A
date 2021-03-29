@@ -50,16 +50,18 @@ export class QuA extends Component {
                 {this.props.data.results && this.props.data.results.map((element, index) => {
                     return (
                         ((index < this.state.quantityQa) ? <QAPart key={index} data={element} /> : '')
-                        // ((element.answers[Object.keys(element.answers)[0]].photos.length > 0) ? <Photo data={element.answers[Object.keys(element.answers)[0]].photos} /> : '')           
                         )
                     }
                     )}
+                    
+         {/* ((element.answers[Object.keys(element.answers)[0]].photos.length > 0) ? <Photo data={element.answers[Object.keys(element.answers)[0]].photos} /> : '') */}
+                    {/* <Photo /> */}
                 <div>
                     {(this.props.data.results && this.state.quantityQa >= this.props.data.results.length ? '' : <div><h5 style={{ marginTop: "25px" }}>LOAD MORE ANSWERS</h5> <button type="button-add" className="MoreAnswerdQuestions" onClick={() => this.setState({ quantityQa: this.state.quantityQa + 2 })}>MORE ANSWERED QUESTIONS</button>  </div>)}
 
                     <div className="container">
                         <div className="btn-add">
-                            <button className="AddQuestions" data-toggle="modal" data-target="#myModal">ADD A QUESTION<i id="adding" className="plus icon"></i></button>
+                            <button className="AddQuestions bb" data-toggle="modal" data-target="#myModal">ADD A QUESTION<i id="adding" className="plus icon"></i></button>
                             <div className="modal fade" id="myModalquestion" role="dialog">
                                 <div className="modal-dialog">
                                     <div className="modal-content">

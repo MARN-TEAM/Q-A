@@ -5,7 +5,7 @@ export class Photo extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            yes: this.props.data.answers[Object.keys(this.props.data.answers)[0]].photos,
+            // yes: this.props.data.answers[Object.keys(this.props.data.answers)[0]].photos,
         }
     }
     render() {
@@ -13,7 +13,7 @@ export class Photo extends Component {
         return (
             <div className='container'>
                 <p>Yes, as you can see in these photos.</p>
-                {/* {this.props.data.results[Object.keys(data.answers)[0]].photos} */}
+                {/* {this.props.data.results[Object.keys(data.answers)[0]].photos}
                 {data.map(e => <div className='row'>
                     <div className='col-2-md'>
                         <Image src={e.photos} size='small' />
@@ -34,7 +34,7 @@ export class Photo extends Component {
                                     <div className="Vertical-Line">
                                     </div>
                                     <button type="button" className="btn btn-link report-button-one-Question">Report</button>
-                        </div>
+                        </div> */}
             </div>
         )
     }

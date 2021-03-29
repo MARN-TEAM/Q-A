@@ -5,52 +5,51 @@ import SearchBar from './components/SearchBar.jsx';
 import QuA from './components/QuA.jsx';
 import Photo from './components/Photo.jsx';
 
-import {token} from '../config.js'
+import { token } from '../config.js'
 
 class App extends React.Component {
      constructor(props) {
           super(props)
           this.state = {
                data: [],
-               filtredData:[],
-               id: "11501"
+               filtredData: [],
           }
           this.fetchData = this.fetchData.bind(this);
           this.SearchQa = this.SearchQa.bind(this);
      }
-    
-     
+
+
      fetchData() {
-          axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions?product_id=' + this.state.id , {
+          axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions?product_id=11510', {
                headers: {
-               Authorization: token
+                    Authorization: token
                }
           })
-          .then((res) => {
-               this.setState({
-                    data: res.data
+               .then((res) => {
+                    this.setState({
+                         data: res.data
+                    })
+                    this.setState({
+                         filtredData: res.data
+                    })
+                    console.log("this is my data ==> ", this.state.data);
                })
-               this.setState({
-                    filtredData: res.data
-               })
-               console.log("this is my data ==> ", this.state.data);
-          })
      }
      SearchQa(word) {
           console.log(word)
-          var Mydata = this.state.data
-          var storage = {results:[]}
+          var newData = this.state.data
+          var storage = { results: [] }
           if (word.length > 2) {
-               for (var i = 0; i < Mydata.results.length; i++) {
-                    if (Mydata.results[i].question_body.toLowerCase().includes(word.toLowerCase())) {
-                         storage.results.push(Mydata.results[i])
+               for (var i = 0; i < newData.results.length; i++) {
+                    if (newData.results[i].question_body.toLowerCase().includes(word.toLowerCase())) {
+                         storage.results.push(newData.results[i])
                     }
                }
                this.setState({ filtredData: storage })
           } else {
                this.setState({ filtredData: this.state.data })
           }
-          
+
      }
      componentDidMount() {
           this.fetchData()
@@ -58,19 +57,18 @@ class App extends React.Component {
 
      render() {
           return (
-               <div>
-                    <SearchBar SearchQa={this.SearchQa}/>
+               <div className='cont'>
+                    <SearchBar SearchQa={this.SearchQa} />
                     <QuA data={this.state.filtredData} />
-                    
                </div>
           )
      }
 }
 export default App;
-    
 
-    
-     
-    
+
+
+
+
 
 

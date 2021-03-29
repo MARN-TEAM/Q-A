@@ -2,7 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import { Button, Form, TextArea } from 'semantic-ui-react';
 import axios from 'axios';
-import { token } from '../../config'
+import { token } from '../../config';
+import Photo from './Photo.jsx';
 
 
 
@@ -128,8 +129,6 @@ class QAPart extends React.Component {
                                 Yes
                                         <p className='Count-Helpful-Yes'>({data.answers[Object.keys(data.answers)[0]].helpfulness, this.state.yesA})</p>
                             </button>
-                            <div className="Vertical-Line">
-                            </div>
                             <button className="btn btn-link report-button-one-Question" onClick={(e) => this.updateRepportAnswers(data.answers[Object.keys(data.answers)[0]].id, e)}>Report</button>
                         </div>
                     </div>
